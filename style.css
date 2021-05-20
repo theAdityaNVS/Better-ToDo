@@ -1,5 +1,5 @@
 body {
-    background: #352f5b;
+    background: #3e5c76;
 }
 
 .container {
@@ -14,9 +14,14 @@ input[type=text], input[type=text]:focus {
 }
 
 .todos li {
-    background: #423a6f;
+    background: #748cab;
 }
 
 .delete {
     cursor: pointer;
+}
+
+.list-group-item:hover {
+    color: black !important;
+    background-color: rgba(255, 255, 255, 0.5);
 }
