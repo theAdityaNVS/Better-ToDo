@@ -7,7 +7,7 @@ const search = document.querySelector('.search input');
 const generateTodoTemplate = (data)=>{
     const liTemplate = `<li class="list-group-item text-light d-flex justify-content-between align-items-center">
             <span>${data}</span>
-            <i class="fas fa-minus-circle"></i>
+            <i class="fas fa-minus-circle delete"></i>
         </li>`;
     return liTemplate;
 }
