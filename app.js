@@ -2,6 +2,7 @@ const newTodo = document.querySelector('.add');
 const list = document.querySelector('.todos');
 const del = document.querySelector('.delete');
 const dateDisplay = document.querySelector('.date');
+const search = document.querySelector('.search input');
 
 const generateTodoTemplate = (data)=>{
     const liTemplate = `<li class="list-group-item text-light d-flex justify-content-between align-items-center">
@@ -51,3 +52,24 @@ let objToday = new Date(),
 var today = `Its ${dayOfWeek} ${dayOfMonth} of ${curMonth}, ${curYear}`;
 
 dateDisplay.textContent = today
+
+const filterTodo = (term)=>{
+    Array.from(list.children)
+    .filter((todo)=>{
+        return !todo.textContent.toLowerCase().includes(term)
+    }).forEach((todo)=>{
+        todo.classList.add('d-none')
+    })
+
+    Array.from(list.children)
+    .filter((todo)=>{
+        return todo.textContent.toLowerCase().includes(term)
+    }).forEach((todo)=>{
+        todo.classList.remove('d-none')
+    })
+}
+
+search.addEventListener('keyup',()=>{
+    const term = search.value.trim();
+    filterTodo(term.toLowerCase());
+})
